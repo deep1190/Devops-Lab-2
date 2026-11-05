@@ -2,9 +2,7 @@
 
 **Student Name:** Deepika  
 **Roll Number:** 2301730274  
-**GitHub Profile:** [@deep1190](https://github.com/deep1190)  
-**Repository:** [https://github.com/deep1190/Devops-Lab-2.git](https://github.com/deep1190/Devops-Lab-2.git)  
-**Email Address:** deepikagupta@11@gmail.com
+**Email Address:** deepikagupta11@gmail.com
 **Course:** DevOps Engineering Laboratory  
 **Assessment:** Lab 2 Assessment (50 Marks Total)  
 **Environment:** Docker Engine 29.x, Docker Compose v5.x, Kubernetes (Minikube) v1.36 / v1.30, kubectl, Python 3.11/3.13  

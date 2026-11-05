@@ -1,6 +1,7 @@
 # ========================================================
 # DevOps Lab 2 - Kubernetes Deployment Manifest
-# Candidate: Akash | Roll No: 2301730184 | ad1646414@gmail.com@gmail.com
+# Candidate: Deepika Gupta | Roll No: 2301730184 | deepikagupta1190@gmail.com
+# GitHub: deep1190 | Repo: https://github.com/deep1190/Devops-Lab-1.git
 # ========================================================
 apiVersion: apps/v1
 kind: Deployment
@@ -9,11 +10,11 @@ metadata:
   labels:
     app: web-app
     tier: frontend
-    maintainer: Akash-2301730184
+    maintainer: Deepika-Gupta-2301730184
   annotations:
-    candidate.name: "Akash"
+    candidate.name: "Deepika Gupta"
     candidate.roll: "2301730184"
-    candidate.email: "ad1646414@gmail.com@gmail.com"
+    candidate.email: "deepikagupta1190@gmail.com"
 spec:
   replicas: 3
   revisionHistoryLimit: 5
@@ -30,11 +31,11 @@ spec:
       labels:
         app: web-app
         version: v1
-        author: Akash-2301730184
+        author: Deepika-Gupta-2301730184
     spec:
       containers:
       - name: web-app
-        image: ad1646414@gmail.com/devops-microservice:1.0.0
+        image: deep1190/devops-microservice:1.0.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
@@ -43,7 +44,7 @@ spec:
         - name: APP_VERSION
           value: "1.0.0"
         - name: STUDENT_NAME
-          value: "Akash"
+          value: "Deepika Gupta"
         - name: STUDENT_ROLL
           value: "2301730184"
         - name: APP_ENV

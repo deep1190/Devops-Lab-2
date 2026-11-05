@@ -1,11 +1,13 @@
 # ==========================================
 # DevOps Lab 2 - Production Multi-Stage Dockerfile
-# Candidate: Akash (Roll No: 2301730184 | ad1646414@gmail.com@gmail.com)
+# Candidate: Deepika Gupta (Roll No: 2301730184 | deepikagupta1190@gmail.com)
+# GitHub: deep1190 | Repo: https://github.com/deep1190/Devops-Lab-1.git
 # ==========================================
 FROM python:3.11-slim AS builder
 
-LABEL maintainer="Akash <ad1646414@gmail.com@gmail.com>"
+LABEL maintainer="Deepika Gupta <deepikagupta1190@gmail.com>"
 LABEL student.roll="2301730184"
+LABEL org.opencontainers.image.source="https://github.com/deep1190/Devops-Lab-1.git"
 
 WORKDIR /app
 
@@ -23,8 +25,9 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 # ==========================================
 FROM python:3.11-slim AS runner
 
-LABEL maintainer="Akash <ad1646414@gmail.com@gmail.com>"
+LABEL maintainer="Deepika Gupta <deepikagupta1190@gmail.com>"
 LABEL student.roll="2301730184"
+LABEL org.opencontainers.image.source="https://github.com/deep1190/Devops-Lab-1.git"
 
 WORKDIR /app
 

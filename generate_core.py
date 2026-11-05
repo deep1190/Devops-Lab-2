@@ -1,7 +1,7 @@
 """
 DevOps Lab 2 - Submission Document Generator
 Builds 9 publication-grade PDFs for Lab 2 Containerization & Kubernetes Orchestration
-Student: Akash (Roll No: 2301730184)
+Student: deepika (Roll No: 2301730274)
 """
 
 import os
@@ -15,9 +15,9 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-STUDENT_NAME = "Akash"
-STUDENT_ROLL = "2301730184"
-STUDENT_EMAIL = "ad1646414@gmail.com@gmail.com"
+STUDENT_NAME = "deepika"
+STUDENT_ROLL = "2301730274"
+STUDENT_EMAIL = "deepikagupta1190@gmail.com"
 
 class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):

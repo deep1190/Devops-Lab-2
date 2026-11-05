@@ -1,6 +1,6 @@
 """
 DevOps Lab 2 - Submissions for Questions 7, 8, and 9
-Student: Akash (Roll No: 2301730184)
+Student: Deepika Gupta (Roll No: 2301730184)
 """
 
 import os
@@ -171,7 +171,7 @@ def build_q8_pdf(output_path):
         "      with: { username: ${{ secrets.DOCKER_USER }}, password: ${{ secrets.DOCKER_TOKEN }} }\n"
         "    - name: Build and Push Docker Image\n"
         "      run: |\n"
-        f"        IMAGE_TAG=ad1646414@gmail.com/devops-microservice:${{{{ github.sha }}}}\n"
+        f"        IMAGE_TAG=deepikagupta1190@gmail.com/devops-microservice:${{{{ github.sha }}}}\n"
         "        docker build -t $IMAGE_TAG -f src/app/Dockerfile src/app\n"
         "        docker push $IMAGE_TAG\n\n"
         "  deploy-to-k8s:\n"
@@ -184,7 +184,7 @@ def build_q8_pdf(output_path):
         "    - name: Dynamically Update Manifests & Deploy\n"
         "      run: |\n"
         "        cd src/k8s\n"
-        f"        kustomize edit set image devops-microservice=ad1646414@gmail.com/devops-microservice:${{{{ github.sha }}}}\n"
+        f"        kustomize edit set image devops-microservice=deepikagupta1190@gmail.com/devops-microservice:${{{{ github.sha }}}}\n"
         "        kubectl apply -k .\n"
         "        kubectl rollout status deployment/web-app-deployment --timeout=90s\n"
         "    - name: Automated Rollback on Failure\n"
@@ -200,7 +200,7 @@ def build_q8_pdf(output_path):
     out_act = (
         f"[main a48f102] feat: candidate {STUDENT_NAME} release v1.0.1\n"
         " 2 files changed, 14 insertions(+), 2 deletions(-)\n"
-        f"To github.com:Akash-2301730184/devops-lab-2.git\n"
+        f"To github.com:deepika-2301730274/devops-lab-2.git\n"
         "--> GitHub Actions Workflow Triggered: Run #42 (Commit: a48f102)"
     )
     story.append(make_terminal_box(cmd_act, out_act, styles))

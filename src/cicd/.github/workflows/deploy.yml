@@ -1,6 +1,7 @@
 # ========================================================
 # DevOps Lab 2 - Automated CI/CD Pipeline
-# Candidate: Akash | Roll No: 2301730184 | ad1646414@gmail.com@gmail.com
+# Candidate: Deepika Gupta | Roll No: 2301730184 | deepikagupta1190@gmail.com
+# GitHub: deep1190 | Repo: https://github.com/deep1190/Devops-Lab-1.git
 # ========================================================
 name: CI/CD Pipeline - Build, Test & Automated Kubernetes Deployment
 
@@ -19,7 +20,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: ad1646414@gmail.com/devops-microservice
+  IMAGE_NAME: deep1190/devops-microservice
   K8S_NAMESPACE: default
 
 jobs:
@@ -128,5 +129,5 @@ jobs:
       - name: Automated Rollback on Deployment Failure
         if: failure()
         run: |
-          echo "Deployment failed! Initiating automated rollback for candidate Akash (2301730184)..."
+          echo "Deployment failed! Initiating automated rollback for candidate Deepika Gupta (2301730184)..."
           kubectl rollout undo deployment/web-app-deployment --namespace ${{ env.K8S_NAMESPACE }}

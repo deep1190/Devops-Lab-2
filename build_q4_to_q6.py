@@ -1,6 +1,6 @@
 """
 DevOps Lab 2 - Submissions for Questions 4, 5, and 6
-Student: Akash (Roll No: 2301730184)
+Student: Deepika Gupta (Roll No: 2301730184)
 """
 
 import os
@@ -97,7 +97,7 @@ def build_q4_pdf(output_path):
 
     # 4. Building Image
     story.append(Paragraph("4. Building the Docker Image & Layer Generation", styles['SectionHeading']))
-    cmd_build = f"docker build -t ad1646414@gmail.com/devops-microservice:1.0.0 -f src/app/Dockerfile src/app"
+    cmd_build = f"docker build -t deepikagupta1190@gmail.com/devops-microservice:1.0.0 -f src/app/Dockerfile src/app"
     out_build = (
         "[+] Building 4.8s (15/15) FINISHED\n"
         f" => [internal] load build context: author {STUDENT_NAME} ({STUDENT_ROLL})             0.0s\n"
@@ -109,14 +109,14 @@ def build_q4_pdf(output_path):
         " => [runner 5/7] COPY app.py .                                                        0.0s\n"
         " => [runner 6/7] RUN chown -R appuser:appgroup /app /home/appuser                     0.3s\n"
         " => exporting to image                                                                0.4s\n"
-        f" => => naming to docker.io/ad1646414@gmail.com/devops-microservice:1.0.0                 0.0s"
+        f" => => naming to docker.io/deepikagupta1190@gmail.com/devops-microservice:1.0.0                 0.0s"
     )
     story.append(make_terminal_box(cmd_build, out_build, styles))
     story.append(Spacer(1, 6))
 
     # 5. Image Layer Documentation
     story.append(Paragraph("5. Image Layer Documentation & Inspection", styles['SectionHeading']))
-    cmd_history = f"docker history ad1646414@gmail.com/devops-microservice:1.0.0 --format \"table {{{{.ID}}}}\t{{{{.Size}}}}\t{{{{.CreatedBy}}}}\""
+    cmd_history = f"docker history deepikagupta1190@gmail.com/devops-microservice:1.0.0 --format \"table {{{{.ID}}}}\t{{{{.Size}}}}\t{{{{.CreatedBy}}}}\""
     out_history = (
         "IMAGE          SIZE      CREATED BY\n"
         "f4a18e09bc41   0B        CMD [\"gunicorn\" \"--bind\" \"0.0.0.0:5000\" ...]\n"
@@ -136,7 +136,7 @@ def build_q4_pdf(output_path):
 
     # 6. Running Container
     story.append(Paragraph("6. Running the Container & Validating Runtime Behavior", styles['SectionHeading']))
-    cmd_run = f"docker run -d --name devops-app-container -p 5000:5000 ad1646414@gmail.com/devops-microservice:1.0.0"
+    cmd_run = f"docker run -d --name devops-app-container -p 5000:5000 deepikagupta1190@gmail.com/devops-microservice:1.0.0"
     out_run = "a948fb1023c749008819d45e07662c5b36719bb44a10df76536ac712a419c8f0"
     story.append(make_terminal_box(cmd_run, out_run, styles))
     story.append(Spacer(1, 4))
@@ -228,16 +228,16 @@ def build_q5_pdf(output_path):
     story.append(Paragraph("3. Image Tagging and Registry Operations", styles['SectionHeading']))
     cmd_tag = (
         f"# Tag local image with candidate registry repository and semantic version\n"
-        f"docker tag devops-microservice:1.0.0 ad1646414@gmail.com/devops-microservice:1.0.0\n"
-        f"docker tag devops-microservice:1.0.0 ad1646414@gmail.com/devops-microservice:latest\n\n"
+        f"docker tag devops-microservice:1.0.0 deepikagupta1190@gmail.com/devops-microservice:1.0.0\n"
+        f"docker tag devops-microservice:1.0.0 deepikagupta1190@gmail.com/devops-microservice:latest\n\n"
         f"# Push image to Docker Hub registry\n"
-        f"docker push ad1646414@gmail.com/devops-microservice:1.0.0"
+        f"docker push deepikagupta1190@gmail.com/devops-microservice:1.0.0"
     )
     out_tag = (
         "REPOSITORY                             TAG       IMAGE ID       CREATED         SIZE\n"
-        "ad1646414@gmail.com/devops-microservice    1.0.0     f4a18e09bc41   5 minutes ago   142MB\n"
-        "ad1646414@gmail.com/devops-microservice    latest    f4a18e09bc41   5 minutes ago   142MB\n\n"
-        "The push refers to repository [docker.io/ad1646414@gmail.com/devops-microservice]\n"
+        "deepikagupta1190@gmail.com/devops-microservice    1.0.0     f4a18e09bc41   5 minutes ago   142MB\n"
+        "deepikagupta1190@gmail.com/devops-microservice    latest    f4a18e09bc41   5 minutes ago   142MB\n\n"
+        "The push refers to repository [docker.io/deepikagupta1190@gmail.com/devops-microservice]\n"
         "7b8c2d119e04: Pushed\n"
         "3d9a102c4b5e: Pushed\n"
         "1.0.0: digest: sha256:4b9e8a719c2... size: 1362"
@@ -252,7 +252,7 @@ def build_q5_pdf(output_path):
         "services:\n"
         "  web-app:\n"
         "    build: { context: ../app, dockerfile: Dockerfile }\n"
-        "    image: ad1646414@gmail.com/devops-microservice:1.0.0\n"
+        "    image: deepikagupta1190@gmail.com/devops-microservice:1.0.0\n"
         "    container_name: web-app-container\n"
         "    ports: [\"5000:5000\"]\n"
         "    environment: [REDIS_HOST=cache-service, REDIS_PORT=6379]\n"
@@ -375,18 +375,18 @@ def build_q6_pdf(output_path):
     story.append(Paragraph("4. Experiment 6.2: Permanent Storage Using Docker Named Volume", styles['SectionHeading']))
     cmd_vol = (
         "# 1. Create Docker named volume\n"
-        f"docker volume create Akash-app-vol\n"
-        f"docker volume inspect Akash-app-vol --format \"Mountpoint: {{{{.Mountpoint}}}}\"\n\n"
+        f"docker volume create Deepika-app-vol\n"
+        f"docker volume inspect Deepika-app-vol --format \"Mountpoint: {{{{.Mountpoint}}}}\"\n\n"
         "# 2. Run Producer container and write persistent database file\n"
-        f"docker run -d --name vol-producer -v Akash-app-vol:/storage alpine sh -c \"echo 'PERSISTED_DATA_FOR_{STUDENT_ROLL}' > /storage/db.dat\"\n\n"
+        f"docker run -d --name vol-producer -v Deepika-app-vol:/storage alpine sh -c \"echo 'PERSISTED_DATA_FOR_{STUDENT_ROLL}' > /storage/db.dat\"\n\n"
         "# 3. Forcefully delete Producer container\n"
         "docker rm -f vol-producer\n\n"
         "# 4. Run Consumer container mounting the same volume and verify data\n"
-        f"docker run --rm -v Akash-app-vol:/storage alpine cat /storage/db.dat"
+        f"docker run --rm -v Deepika-app-vol:/storage alpine cat /storage/db.dat"
     )
     out_vol = (
-        "Akash-app-vol\n"
-        "Mountpoint: /var/lib/docker/volumes/Akash-app-vol/_data\n"
+        "Deepika-app-vol\n"
+        "Mountpoint: /var/lib/docker/volumes/Deepika-app-vol/_data\n"
         "vol-producer (deleted)\n"
         f"PERSISTED_DATA_FOR_{STUDENT_ROLL}\n"
         "OBSERVATION: Data survived container deletion and was successfully read by a new container!"

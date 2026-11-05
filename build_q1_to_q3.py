@@ -1,6 +1,7 @@
 """
 DevOps Lab 2 - Submissions for Questions 1, 2, and 3
-Student: Akash (Roll No: 2301730184)
+Student: Deepika Gupta (Roll No: 2301730184)
+GitHub: deep1190 | Repo: https://github.com/deep1190/Devops-Lab-1.git
 """
 
 import os
@@ -104,14 +105,14 @@ def build_q1_pdf(output_path):
     story.append(Paragraph("4. Declarative Manifest Implementation", styles['SectionHeading']))
     story.append(Paragraph("<b>4.1 Deployment Specification (<code>deployment.yaml</code>)</b>", styles['SubSectionHeading']))
     dep_code = (
-        "# Author: Akash (Roll No: 2301730184 | ad1646414@gmail.com@gmail.com)\n"
+        "# Author: Deepika Gupta (Roll No: 2301730184 | deepikagupta1190@gmail.com)\n"
         "apiVersion: apps/v1\n"
         "kind: Deployment\n"
         "metadata:\n"
         "  name: web-app-deployment\n"
         "  labels:\n"
         "    app: web-app\n"
-        "    maintainer: Akash-2301730184\n"
+        "    maintainer: Deepika-Gupta-2301730184\n"
         "spec:\n"
         "  replicas: 3\n"
         "  selector:\n"
@@ -125,7 +126,7 @@ def build_q1_pdf(output_path):
         "    spec:\n"
         "      containers:\n"
         "      - name: web-app\n"
-        "        image: ad1646414@gmail.com/devops-microservice:1.0.0\n"
+        "        image: deep1190/devops-microservice:1.0.0\n"
         "        imagePullPolicy: IfNotPresent\n"
         "        ports:\n"
         "        - containerPort: 5000\n"
@@ -154,7 +155,7 @@ def build_q1_pdf(output_path):
 
     story.append(Paragraph("<b>4.2 Service Specification (<code>service.yaml</code>)</b>", styles['SubSectionHeading']))
     svc_code = (
-        "# Author: Akash (Roll No: 2301730184 | ad1646414@gmail.com@gmail.com)\n"
+        "# Author: Deepika Gupta (Roll No: 2301730184 | deepikagupta1190@gmail.com)\n"
         "apiVersion: v1\n"
         "kind: Service\n"
         "metadata:\n"
@@ -334,7 +335,7 @@ def build_q2_pdf(output_path):
 
     # 4. Demonstration 2: Zero-Downtime Rolling Update
     story.append(Paragraph("4. Demonstration 2: Zero-Downtime Rolling Update to Version 2.0", styles['SectionHeading']))
-    cmd_rollout = f"kubectl set image deployment/web-app-deployment web-app=ad1646414@gmail.com/devops-microservice:2.0.0 --record"
+    cmd_rollout = "kubectl set image deployment/web-app-deployment web-app=deep1190/devops-microservice:2.0.0 --record"
     out_rollout = "deployment.apps/web-app-deployment image updated"
     story.append(make_terminal_box(cmd_rollout, out_rollout, styles))
     story.append(Spacer(1, 4))
@@ -360,7 +361,7 @@ def build_q2_pdf(output_path):
 
     # 5. Demonstration 3: Fault Injection & Rollback
     story.append(Paragraph("5. Demonstration 3: Failure Simulation and Automated Rollback", styles['SectionHeading']))
-    cmd_fail = f"kubectl set image deployment/web-app-deployment web-app=ad1646414@gmail.com/devops-microservice:3.0.0-broken --record"
+    cmd_fail = "kubectl set image deployment/web-app-deployment web-app=deep1190/devops-microservice:3.0.0-broken --record"
     out_fail = "deployment.apps/web-app-deployment image updated"
     story.append(make_terminal_box(cmd_fail, out_fail, styles))
     story.append(Spacer(1, 4))
@@ -386,8 +387,8 @@ def build_q2_pdf(output_path):
     out_history = (
         "REVISION  CHANGE-CAUSE\n"
         "1         kubectl apply -f k8s/deployment.yaml --record=true\n"
-        f"3         kubectl set image deployment/web-app-deployment web-app=ad1646414@gmail.com/devops-microservice:3.0.0-broken --record=true\n"
-        f"4         kubectl set image deployment/web-app-deployment web-app=ad1646414@gmail.com/devops-microservice:2.0.0 --record=true"
+        "3         kubectl set image deployment/web-app-deployment web-app=deep1190/devops-microservice:3.0.0-broken --record=true\n"
+        "4         kubectl set image deployment/web-app-deployment web-app=deep1190/devops-microservice:2.0.0 --record=true"
     )
     story.append(make_terminal_box(cmd_history, out_history, styles))
     story.append(Spacer(1, 8))
